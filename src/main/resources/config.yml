@@ -1,0 +1,44 @@
+# SMPCombatLog Configuration
+
+# Enable or disable combat logging system
+combat-log-enabled: true
+
+# Combat duration in seconds
+combat-duration: 10
+
+# BossBar settings
+bossbar:
+  enabled: true
+  title: "Combat Active"
+  color: "RED"
+
+# Glow effect settings
+glow:
+  enabled: true
+  color: "RED"
+
+# Punishment settings
+punishment:
+  type: "kill" # Options: kill, damage
+  broadcast: true
+
+# Messages (MiniMessage formatting)
+messages:
+  combat-start: "<red>⚔ <bold>COMBAT STARTED</bold> ⚔<reset>\n<red>You are fighting <yellow>%opponent%<reset>"
+  combat-end: "<green>✓ <bold>Combat Ended<reset>"
+  combat-logging: "<dark_red>☠ <bold>%player% has been killed for combat logging!</bold>"
+  combat-logging-broadcast: "<dark_red>[Combat Log] %player% was slain while in combat with %opponent%!"
+  pvp-disabled: "<yellow>⚠ PvP has been disabled. All active combats have ended.</yellow>"
+  pvp-enabled: "<green>✓ PvP has been enabled!</green>"
+  command-pvp-enabled: "<green>✓ PvP is now <bold>ENABLED</bold></green>"
+  command-pvp-disabled: "<red>✓ PvP is now <bold>DISABLED</bold></red>"
+  command-pvp-status-enabled: "<green>PvP Status: <bold>ENABLED</bold></green>"
+  command-pvp-status-disabled: "<red>PvP Status: <bold>DISABLED</bold></red>"
+  command-usage: "<yellow>Usage: /pvp <green>enable<reset><yellow>|<reset><red>disable<reset><yellow>|<reset><aqua>status</aqua>"
+  command-reload: "<green>✓ Configuration reloaded!</green>"
+  command-bypass-added: "<green>✓ Bypass added for <yellow>%player%</yellow></green>"
+  command-bypass-added-player: "<green>You are now bypassed from combat logging</green>"
+  command-bypass-removed: "<green>✓ Bypass removed for <yellow>%player%</yellow></green>"
+  command-bypass-removed-player: "<yellow>You are no longer bypassed from combat logging</yellow>"
+  error-player-not-found: "<red>Error: Player not found</red>"
+  error-no-permission: "<red>Error: You do not have permission to use this command</red>"

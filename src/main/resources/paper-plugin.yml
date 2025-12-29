@@ -1,0 +1,7 @@
+name: SMPCombatLog
+version: '${version}'
+main: org.m9mx.smpcombatlog.SMPCombatLog
+api-version: '1.21.10'
+load: STARTUP
+authors: [ M9MX ]
+description: Global PvP combat logging system with visual feedback
