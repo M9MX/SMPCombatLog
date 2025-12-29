@@ -229,6 +229,76 @@ For bug reports and feature requests, visit the [GitHub Repository](https://gith
 
 M9MX
 
+## Adding as a Dependency
+
+### Step 1: Download the JAR
+
+Download the latest SMPCombatLog JAR from [GitHub Releases](https://github.com/M9MX/SMPCombatLog/releases):
+- Download `SMPCombatLog-1.0.jar`
+- Place it in a `libs/` directory in your project root
+
+### Step 2: Add to Gradle
+
+In your `build.gradle` file, add the local dependency:
+
+```gradle
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compileOnly 'org.m9mx:SMPCombatLog:1.0'
+}
+```
+
+### Step 3: Declare Plugin Dependency
+
+In your `paper-plugin.yml`, declare SMPCombatLog as a dependency:
+
+```yaml
+name: YourPlugin
+version: '1.0'
+main: your.plugin.YourPlugin
+api-version: '1.21.10'
+
+dependencies:
+  server:
+    SMPCombatLog:
+      load: BEFORE
+      required: true
+      join-classpath: true
+```
+
+The `join-classpath: true` option gives your plugin access to SMPCombatLog's classes.
+
+### Step 4: Use the API
+
+You can now import and use the API in your plugin:
+
+```java
+import org.m9mx.smpcombatlog.api.CombatLogAPI;
+import org.m9mx.smpcombatlog.SMPCombatLog;
+
+SMPCombatLog plugin = (SMPCombatLog) Bukkit.getPluginManager().getPlugin("SMPCombatLog");
+CombatLogAPI api = plugin.getAPI();
+```
+
 ## License
 
-All rights reserved.
+**Non-Commercial License** - SMPCombatLog is provided free for non-commercial use only.
+
+You may:
+- Use this plugin on your personal or community server
+- Study and learn from the source code
+- Use portions of the code in your own non-commercial projects
+
+You may NOT:
+- Charge money for this plugin or resell it
+- Use it as part of a paid service or product
+- Profit from it in any way
+
+For commercial use or licensing inquiries, contact the author at https://github.com/M9MX
+
+See LICENSE file for full terms.
